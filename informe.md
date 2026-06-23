@@ -17,7 +17,7 @@ private void printTreeRecursivo(Node<Integer> actual, int nivel) {
 }
 ```
 
-Cada valor sigue el metodo: izquierda menores, derecha mayores, recorre primero la rama derecha (mayor), imprime el nodo con sangria segun su nivel, luego la rama izquierda.
+Cada valor sigue el metodo: izquierda menores, derecha mayores, recorre primero la rama derecha, imprime segun su nivel, luego la rama izquierda.
 
 ---
 
