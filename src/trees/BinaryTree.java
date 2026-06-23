@@ -87,8 +87,6 @@ public class BinaryTree<T extends Comparable<T>> {
     public void porNiveles() {
         porNiveles1();
     }
-
-
   // inorder
     public void inOrder() {
         inOrderRecursivo(root);
@@ -119,7 +117,6 @@ public class BinaryTree<T extends Comparable<T>> {
     }
     System.out.println();
 }
-
     // altura
     public int altura() {
         return alturaRecursivo(root);
@@ -132,7 +129,6 @@ public class BinaryTree<T extends Comparable<T>> {
         int rightHeight = alturaRecursivo(actual.getRight());
         return Math.max(leftHeight, rightHeight + 1);
     }
-
     //peso
     public int peso() {
         return pesoRecursivo(root);

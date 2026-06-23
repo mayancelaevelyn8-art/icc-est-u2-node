@@ -1,7 +1,6 @@
 package trees;
 import java.util.LinkedList;
 import java.util.Queue;
-
 import node.Node;
 
 // Clase que representa un árbol binario de enteros
@@ -88,13 +87,10 @@ public class IntTree {
     public void porNiveles() {
         porNiveles1();
     }
-
-
   // inorder
     public void inOrder() {
         inOrderRecursivo(root);
     }
-
     private void inOrderRecursivo(Node<Integer> actual) {
         if (actual == null)
             return;
@@ -102,7 +98,6 @@ public class IntTree {
         System.out.print(actual + " ");
         inOrderRecursivo(actual.getRight());
     }
-
     // niveles
     public void porNiveles1() {
     if (isEmpty())
@@ -120,7 +115,6 @@ public class IntTree {
     }
     System.out.println();
 }
-
     // altura
     public int altura() {
         return alturaRecursivo(root);
@@ -133,7 +127,6 @@ public class IntTree {
         int rightHeight = alturaRecursivo(actual.getRight());
         return Math.max(leftHeight, rightHeight + 1);
     }
-
     //peso
     public int peso() {
         return pesoRecursivo(root);

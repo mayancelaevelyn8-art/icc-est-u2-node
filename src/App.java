@@ -19,11 +19,12 @@ public class App {
         int [] numeros = {5, 3, 7, 2, 4, 6, 8};
         ejercicio1.insert(numeros);
     }
+
     public static void runEjercicio2(){
-    Ejercicio2 ejercicio2 = new Ejercicio2();
-          BinaryTree<Integer> tree = new BinaryTree<>();
-    int [] numeros = {4, 2, 7, 1, 3, 6, 9};
-    for (int n : numeros) {
+        Ejercicio2 ejercicio2 = new Ejercicio2();
+        BinaryTree<Integer> tree = new BinaryTree<>();
+        int [] numeros = {4, 2, 7, 1, 3, 6, 9};
+        for (int n : numeros) {
         tree.insert(n);
     }
     ejercicio2.invert(tree.getRoot());
