@@ -1,12 +1,16 @@
 import java.util.List;
 import java.util.Random;
+import java.util.Set;
+
+import collections.sets.Sets;
+import models.Contacto;
+import models.Person;
 import trees.BinaryTree;
 import trees.Ejercicio1;
 import trees.Ejercicio2;
 import trees.Ejercicio3;
 import trees.Ejercicio4;
 import trees.IntTree;
-import trees.Person;
 import node.Node;
 
 public abstract class App {
@@ -18,6 +22,8 @@ public abstract class App {
         runEjercicio2();
         runEjercicio3();
         runEjercicio4();
+        runSets();
+      
     }
     public static void runEjercicio1(){
         Ejercicio1 ejercicio1 = new Ejercicio1();
@@ -155,4 +161,38 @@ public static void runEjercicio4() {
         System.out.println("por Niveles");
         arbolNumeros.porNiveles();
     }
+
+    private static void runSets() {
+    Sets sets = new Sets();
+
+    //Primera implementacion
+    System.out.println(" HashSets");
+    Set<String> hashSet = sets.construirHashSet();
+    System.out.println(hashSet);
+    System.out.println("Tamanio: " + hashSet.size());
+    System.out.println(hashSet.contains("F"));
+
+    //Segunda  implementacion        
+    System.out.println(" LinkedHashSet");
+    Set<String> linkedHashSet = sets.construirLinkedHashSet();
+    System.out.println(linkedHashSet);
+    System.out.println("Tamanio: " + linkedHashSet.size());
+    System.out.println(linkedHashSet.contains("F"));
+
+    //Tercera  implementacion   
+    System.out.println(" TreeSet");
+    Set<String> treeSet = sets.construirTreeSet();
+    System.out.println(treeSet);
+    System.out.println("Tamanio: " + treeSet.size());
+    System.out.println(treeSet.contains("F"));
+
+    //Cuarta implementacion
+    System.out.println(" TreeSet");
+    Set<Contacto> tCSet = sets.construirTreeSetConComparador();
+    System.out.println(tCSet);
+    System.out.println("Tamanio: " + tCSet.size());
+               
+
+    }
+ 
 }
