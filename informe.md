@@ -42,3 +42,46 @@ private void invertRecursively(Node<Integer> actual) {
 ```
 
 Del arbol original, intercambia el izquierdo y derecho de cada nodo. Imprime el arbol invertido. El arbol queda con los mayores a la izquierda y menores a la derecha.
+# Informe: Ejercicio 3 y 4
+
+## Ejercicio 3 — Listar Niveles en Listas Enlazadas
+
+```java
+public List<List<Node<Integer>>> listLevels(Node<Integer> root) {
+    List<List<Node<Integer>>> resultado = new ArrayList<>();
+    if (root == null) return resultado;
+    Queue<Node<Integer>> cola = new LinkedList<>();
+    cola.add(root);
+    while (!cola.isEmpty()) {
+        int size = cola.size();
+        List<Node<Integer>> nivel = new LinkedList<>();
+        for (int i = 0; i < size; i++) {
+            Node<Integer> actual = cola.poll();
+            nivel.add(actual);
+            if (actual.getLeft() != null) cola.add(actual.getLeft());
+            if (actual.getRight() != null) cola.add(actual.getRight());
+        }
+        resultado.add(nivel);
+    }
+    return resultado;
+}
+```
+
+Recorrer el arbol por niveles cada iteracion, los agrega a una lista, y encola sus hijos. Devuelve una lista de listas, una por nivel.
+
+---
+
+## Ejercicio 4 — Calcular Profundidad Maxima
+
+```java
+public int maxDepth(Node<Integer> root) {
+    if (root == null) return 0;
+    int left = maxDepth(root.getLeft());
+    int right = maxDepth(root.getRight());
+    return Math.max(left, right) + 1;
+}
+```
+
+Calcula la rama izquierda y derecha de cada nodo, la profundidad maxima corresponde al camino mas largo desde la raiz hasta una hoja.
+
+

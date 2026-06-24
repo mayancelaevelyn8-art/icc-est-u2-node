@@ -1,18 +1,23 @@
+import java.util.List;
 import java.util.Random;
-
 import trees.BinaryTree;
 import trees.Ejercicio1;
 import trees.Ejercicio2;
+import trees.Ejercicio3;
+import trees.Ejercicio4;
 import trees.IntTree;
 import trees.Person;
+import node.Node;
 
-public class App {
+public abstract class App {
     public static void main(String[] args) throws Exception {
         runIntTree();
         runPersonTree();
         runIntComparativaPesos();
         runEjercicio1();
         runEjercicio2();
+        runEjercicio3();
+        runEjercicio4();
     }
     public static void runEjercicio1(){
         Ejercicio1 ejercicio1 = new Ejercicio1();
@@ -29,6 +34,32 @@ public class App {
     }
     ejercicio2.invert(tree.getRoot());
 }  
+    public static void runEjercicio3() {
+       BinaryTree<Integer> tree = new BinaryTree<>();
+        int[] numeros = {4, 2, 7, 1, 3, 6, 9};
+           for (int n : numeros) tree.insert(n);
+
+    Ejercicio3 ejercicio3 = new Ejercicio3();
+    List<List<Node<Integer>>> niveles = ejercicio3.listLevels(tree.getRoot());
+
+    for (List<Node<Integer>> nivel : niveles) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < nivel.size(); i++) {
+            if (i > 0) sb.append(" -> ");
+            sb.append(nivel.get(i).getValue());
+        }
+        System.out.println(sb.toString());
+    }
+}
+public static void runEjercicio4() {
+    BinaryTree<Integer> tree = new BinaryTree<>();
+    int[] numeros = {4, 2, 1, 8, 3, 7};
+    for (int n : numeros) tree.insert(n);
+
+    Ejercicio4 ejercicio4 = new Ejercicio4();
+    System.out.println("Altura maxima: " + ejercicio4.maxDepth(tree.getRoot()));
+}
+
     private static void runPersonTree() {
         BinaryTree<Person> personTree = new BinaryTree<>();
         personTree.insert(new Person("Alice", 30));

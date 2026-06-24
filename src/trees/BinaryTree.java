@@ -129,6 +129,7 @@ public class BinaryTree<T extends Comparable<T>> {
         int rightHeight = alturaRecursivo(actual.getRight());
         return Math.max(leftHeight, rightHeight + 1);
     }
+
     //peso
     public int peso() {
         return pesoRecursivo(root);
