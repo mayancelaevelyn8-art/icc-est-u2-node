@@ -2,6 +2,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.Set;
 
+import collections.maps.Maps;
 import collections.sets.Sets;
 import models.Contacto;
 import models.Person;
@@ -23,8 +24,15 @@ public abstract class App {
         runEjercicio3();
         runEjercicio4();
         runSets();
+        runMaps();
+
       
     }
+    private static void runMaps() {
+        Maps maps = new Maps();
+        maps.construriHasMap();
+    }
+
     public static void runEjercicio1(){
         Ejercicio1 ejercicio1 = new Ejercicio1();
         int [] numeros = {5, 3, 7, 2, 4, 6, 8};

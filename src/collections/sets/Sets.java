@@ -109,6 +109,7 @@ public class Sets {
         Contacto c4 = new Contacto("Maria", "Rodriguez", "789123456");
         Contacto c5 = new Contacto("Juan", "Perez", "123456789"); // Duplicado, no se agregará
         Contacto c6 = new Contacto("Juan", "Lopez", "123456789"); 
+        System.out.println(("Contacto c1: "));
         hCSet.add(c1);
         hCSet.add(c2);
         hCSet.add(c3);
@@ -118,5 +119,4 @@ public class Sets {
         return hCSet;
 
     }
-
 }
