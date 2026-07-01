@@ -62,3 +62,5 @@ Se realizó una comparativa de rendimiento entre dos formas de calcular el peso 
 ![alt text](image-2.png)
 
 ### Captura de salida en consola
+
+![alt text](image-5.png)

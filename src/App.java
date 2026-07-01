@@ -1,9 +1,9 @@
 import java.util.List;
 import java.util.Random;
 import java.util.Set;
-
 import collections.maps.Maps;
 import collections.sets.Sets;
+import estructura.graphs.Graph;
 import models.Contacto;
 import models.Person;
 import trees.BinaryTree;
@@ -25,9 +25,30 @@ public abstract class App {
         runEjercicio4();
         runSets();
         runMaps();
-
-      
+        runGraph();
     }
+
+    private static void runGraph(){
+        Graph<String> grafo = new Graph<>();
+        grafo.add("A");
+        grafo.add("B");
+        grafo.add("C");
+        grafo.add("D");
+        grafo.add("J");
+        
+        grafo.addEdge("J", "D");
+        grafo.addEdge("C", "D");
+        grafo.addEdge("A", "B");
+        grafo.addEdge("A", "C");
+        grafo.addEdge("B", "D");
+        grafo.addEdge("C", "D");
+        grafo.addEdge("D", "J");
+        
+        System.out.println("pp");
+        grafo.printGraph();
+
+    }
+
     private static void runMaps() {
         Maps maps = new Maps();
         maps.construriHasMap();
@@ -81,7 +102,6 @@ public static void runEjercicio4() {
         personTree.insert(new Person("Diego", 35));   
         personTree.insert(new Person("Rafael", 30));
         personTree.insert(new Person("Ana", 35));
-
         personTree.inOrder();
         System.out.println();
         System.out.println();
@@ -174,28 +194,28 @@ public static void runEjercicio4() {
     Sets sets = new Sets();
 
     //Primera implementacion
-    System.out.println(" HashSets");
+    System.out.println("HashSets");
     Set<String> hashSet = sets.construirHashSet();
     System.out.println(hashSet);
     System.out.println("Tamanio: " + hashSet.size());
     System.out.println(hashSet.contains("F"));
 
     //Segunda  implementacion        
-    System.out.println(" LinkedHashSet");
+    System.out.println("LinkedHashSet");
     Set<String> linkedHashSet = sets.construirLinkedHashSet();
     System.out.println(linkedHashSet);
     System.out.println("Tamanio: " + linkedHashSet.size());
     System.out.println(linkedHashSet.contains("F"));
 
     //Tercera  implementacion   
-    System.out.println(" TreeSet");
+    System.out.println("TreeSet");
     Set<String> treeSet = sets.construirTreeSet();
     System.out.println(treeSet);
     System.out.println("Tamanio: " + treeSet.size());
     System.out.println(treeSet.contains("F"));
 
     //Cuarta implementacion
-    System.out.println(" TreeSet");
+    System.out.println("TreeSet");
     Set<Contacto> tCSet = sets.construirTreeSetConComparador();
     System.out.println(tCSet);
     System.out.println("Tamanio: " + tCSet.size());
