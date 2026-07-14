@@ -1,21 +1,22 @@
 package estructura.graphs;
 
-import java.util.LinkedHashMap;
-import java.util.LinkedHashSet;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+
 import node.Node;
 
 public class Graph<T> {
     private Map<Node<T>, Set<Node<T>>> graph;
 
     public Graph() {
-        this.graph = new LinkedHashMap<Node<T>, Set<Node<T>>>();
+        this.graph = new HashMap<Node<T>, Set<Node<T>>>();
     }
 
     public void add(T data) {
         Node<T> node = new Node<T>(data);
-        graph.putIfAbsent(node, new LinkedHashSet<Node<T>>());
+        graph.putIfAbsent(node, new HashSet<Node<T>>());
     }
 
     private Node<T> findNode(T data) {
@@ -48,9 +49,22 @@ public class Graph<T> {
         for (Map.Entry<Node<T>, Set<Node<T>>> entry : graph.entrySet()) {
             System.out.print(entry.getKey() + " -> ");
             for (Node<T> conecciones : entry.getValue()) {
-                System.out.print(conecciones + "");
+                System.out.print(conecciones + " ");
             }
             System.out.println();
         }
+    }
+
+    public Node<T>[] getVecinos(T start) {
+        Node<T> node = findNode(start);
+        if (node != null) {
+            Set<Node<T>> vecinos = graph.get(node);
+            return vecinos.toArray(new Node[vecinos.size()]);
+        }
+        return new Node[0];
+    }
+
+    public Set<Node<T>> getOrDefault(Node<T> node, HashSet<Node<T>> hashSet) {
+        return graph.getOrDefault(node, hashSet);
     }
 }
